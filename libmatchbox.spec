@@ -4,7 +4,7 @@ Name:		libmatchbox
 Version:	1.9
 Release:	1
 License:	LGPL v2+
-Group:		Libraries
+Group:		X11/Libraries
 Source0:	http://projects.o-hand.com/matchbox/sources/libmatchbox/%{version}/%{name}-%{version}.tar.bz2
 # Source0-md5:	9f73e7515cc4679171a5db180dc1343b
 URL:		http://projects.o-hand.com/matchbox/
@@ -27,7 +27,7 @@ Biblioteka narzêdziowa u¿ywana przez narzêdzia Matchbox.
 %package devel
 Summary:	Header files for Matchbox library
 Summary(pl):	Pliki nag³ówkowe biblioteki Matchbox
-Group:		Development/Libraries
+Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	Xsettings-client-devel
 Requires:	libjpeg-devel
@@ -46,7 +46,7 @@ Pliki nag³ówkowe biblioteki Matchbox.
 %package static
 Summary:	Static Matchbox library
 Summary(pl):	Statyczna biblioteka Matchbox
-Group:		Development/Libraries
+Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
