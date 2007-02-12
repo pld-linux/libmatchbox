@@ -1,5 +1,5 @@
 Summary:	Utility library used by Matchbox utilities
-Summary(pl.UTF-8):   Biblioteka narzędziowa używana przez narzędzia Matchbox
+Summary(pl.UTF-8):	Biblioteka narzędziowa używana przez narzędzia Matchbox
 Name:		libmatchbox
 Version:	1.9
 Release:	1
@@ -26,7 +26,7 @@ Biblioteka narzędziowa używana przez narzędzia Matchbox.
 
 %package devel
 Summary:	Header files for Matchbox library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki Matchbox
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki Matchbox
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	Xsettings-client-devel
@@ -45,7 +45,7 @@ Pliki nagłówkowe biblioteki Matchbox.
 
 %package static
 Summary:	Static Matchbox library
-Summary(pl.UTF-8):   Statyczna biblioteka Matchbox
+Summary(pl.UTF-8):	Statyczna biblioteka Matchbox
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
