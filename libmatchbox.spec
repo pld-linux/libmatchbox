@@ -1,5 +1,5 @@
 Summary:	Utility library used by Matchbox utilities
-Summary(pl):	Biblioteka narzêdziowa u¿ywana przez narzêdzia Matchbox
+Summary(pl.UTF-8):   Biblioteka narzÄ™dziowa uÅ¼ywana przez narzÄ™dzia Matchbox
 Name:		libmatchbox
 Version:	1.9
 Release:	1
@@ -21,12 +21,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Utility library used by Matchbox utilities.
 
-%description -l pl
-Biblioteka narzêdziowa u¿ywana przez narzêdzia Matchbox.
+%description -l pl.UTF-8
+Biblioteka narzÄ™dziowa uÅ¼ywana przez narzÄ™dzia Matchbox.
 
 %package devel
 Summary:	Header files for Matchbox library
-Summary(pl):	Pliki nag³ówkowe biblioteki Matchbox
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki Matchbox
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	Xsettings-client-devel
@@ -40,19 +40,19 @@ Requires:	xorg-lib-libXft-devel
 %description devel
 Header files for Matchbox library.
 
-%description devel -l pl
-Pliki nag³ówkowe biblioteki Matchbox.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe biblioteki Matchbox.
 
 %package static
 Summary:	Static Matchbox library
-Summary(pl):	Statyczna biblioteka Matchbox
+Summary(pl.UTF-8):   Statyczna biblioteka Matchbox
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static Matchbox library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka Matchbox.
 
 %prep
