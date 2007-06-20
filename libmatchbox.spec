@@ -2,15 +2,15 @@ Summary:	Utility library used by Matchbox utilities
 Summary(pl.UTF-8):	Biblioteka narzędziowa używana przez narzędzia Matchbox
 Name:		libmatchbox
 Version:	1.9
-Release:	1
+Release:	2
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://projects.o-hand.com/matchbox/sources/libmatchbox/%{version}/%{name}-%{version}.tar.bz2
 # Source0-md5:	9f73e7515cc4679171a5db180dc1343b
 URL:		http://projects.o-hand.com/matchbox/
-BuildRequires:	Xsettings-client-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel >= 1.2
+BuildRequires:	libxsettings-client-devel
 BuildRequires:	pango-devel
 BuildRequires:	pkgconfig
 BuildRequires:	xorg-lib-libX11-devel
@@ -29,9 +29,9 @@ Summary:	Header files for Matchbox library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki Matchbox
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	Xsettings-client-devel
 Requires:	libjpeg-devel
 Requires:	libpng-devel >= 1.2
+Requires:	libxsettings-client-devel
 Requires:	pango-devel
 Requires:	xorg-lib-libX11-devel
 Requires:	xorg-lib-libXext-devel
@@ -59,7 +59,10 @@ Statyczna biblioteka Matchbox.
 %setup -q
 
 %build
-%configure
+%configure \
+	--enable-jpeg \
+	--enable-pango \
+	--enable-xsettings
 %{__make}
 
 %install
