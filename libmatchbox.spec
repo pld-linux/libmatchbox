@@ -2,7 +2,7 @@ Summary:	Utility library used by Matchbox utilities
 Summary(pl.UTF-8):	Biblioteka narzędziowa używana przez narzędzia Matchbox
 Name:		libmatchbox
 Version:	1.9
-Release:	6
+Release:	7
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://projects.o-hand.com/matchbox/sources/libmatchbox/%{version}/%{name}-%{version}.tar.bz2
