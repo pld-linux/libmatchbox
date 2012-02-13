@@ -2,14 +2,20 @@ Summary:	Utility library used by Matchbox utilities
 Summary(pl.UTF-8):	Biblioteka narzędziowa używana przez narzędzia Matchbox
 Name:		libmatchbox
 Version:	1.9
-Release:	7
+Release:	8
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://projects.o-hand.com/matchbox/sources/libmatchbox/%{version}/%{name}-%{version}.tar.bz2
 # Source0-md5:	9f73e7515cc4679171a5db180dc1343b
+Patch0:		%{name}-ac.patch
+Patch1:		%{name}-libpng15.patch
+Patch2:		%{name}-libs.patch
 URL:		http://projects.o-hand.com/matchbox/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel >= 1.4
+BuildRequires:	libtool
 BuildRequires:	libxsettings-client-devel
 BuildRequires:	pango-devel
 BuildRequires:	pkgconfig
@@ -57,10 +63,18 @@ Statyczna biblioteka Matchbox.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 %{__sed} -i -e 's/png_check_sig( header, 8 )/!png_sig_cmp(header, 0, 8)/g' libmb/mbpixbuf.c
 
 %build
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	--enable-jpeg \
 	--enable-pango \
