@@ -96,7 +96,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %ghost %{_libdir}/libmb.so.?
+%attr(755,root,root) %ghost %{_libdir}/libmb.so.1
 %attr(755,root,root) %{_libdir}/libmb.so.*.*.*
 
 %files devel
