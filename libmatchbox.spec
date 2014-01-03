@@ -2,7 +2,7 @@ Summary:	Utility library used by Matchbox utilities
 Summary(pl.UTF-8):	Biblioteka narzędziowa używana przez narzędzia Matchbox
 Name:		libmatchbox
 Version:	1.9
-Release:	11
+Release:	12
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://projects.o-hand.com/matchbox/sources/libmatchbox/%{version}/%{name}-%{version}.tar.bz2
@@ -96,6 +96,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
+%attr(755,root,root) %ghost %{_libdir}/libmb.so.?
 %attr(755,root,root) %{_libdir}/libmb.so.*.*.*
 
 %files devel
