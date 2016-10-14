@@ -2,7 +2,7 @@ Summary:	Utility library used by Matchbox utilities
 Summary(pl.UTF-8):	Biblioteka narzędziowa używana przez narzędzia Matchbox
 Name:		libmatchbox
 Version:	1.9
-Release:	13
+Release:	14
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://projects.o-hand.com/matchbox/sources/libmatchbox/%{version}/%{name}-%{version}.tar.bz2
@@ -10,7 +10,7 @@ Source0:	http://projects.o-hand.com/matchbox/sources/libmatchbox/%{version}/%{na
 Patch0:		%{name}-ac.patch
 Patch1:		%{name}-libpng15.patch
 Patch2:		%{name}-libs.patch
-URL:		http://projects.o-hand.com/matchbox/
+URL:		http://matchbox-project.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libjpeg-devel
@@ -87,6 +87,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libmb.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -102,7 +104,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libmb.so
-%{_libdir}/libmb.la
 %{_includedir}/libmb
 %{_pkgconfigdir}/libmb.pc
 
