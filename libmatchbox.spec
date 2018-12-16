@@ -1,20 +1,18 @@
 Summary:	Utility library used by Matchbox utilities
 Summary(pl.UTF-8):	Biblioteka narzędziowa używana przez narzędzia Matchbox
 Name:		libmatchbox
-Version:	1.9
-Release:	14
+Version:	1.11
+Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://projects.o-hand.com/matchbox/sources/libmatchbox/%{version}/%{name}-%{version}.tar.bz2
-# Source0-md5:	9f73e7515cc4679171a5db180dc1343b
-Patch0:		%{name}-ac.patch
-Patch1:		%{name}-libpng15.patch
-Patch2:		%{name}-libs.patch
-URL:		http://matchbox-project.org/
-BuildRequires:	autoconf
+Source0:	http://downloads.yoctoproject.org/releases/matchbox/libmatchbox/%{version}/%{name}-%{version}.tar.bz2
+# Source0-md5:	fc6cc807f55a3e7c752d8013176875d7
+Patch0:		%{name}-libs.patch
+URL:		https://www.yoctoproject.org/software-item/matchbox/
+BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	libjpeg-devel
-BuildRequires:	libpng-devel >= 1.4
+BuildRequires:	libpng-devel >= 2:1.4
 BuildRequires:	libtool
 BuildRequires:	libxsettings-client-devel
 BuildRequires:	pango-devel
@@ -36,7 +34,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki Matchbox
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libjpeg-devel
-Requires:	libpng-devel >= 1.2
+Requires:	libpng-devel >= 2:1.4
 Requires:	libxsettings-client-devel
 Requires:	pango-devel
 Requires:	xorg-lib-libX11-devel
@@ -64,10 +62,8 @@ Statyczna biblioteka Matchbox.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-%patch2 -p1
 
-%{__sed} -i -e 's/png_check_sig( header, 8 )/!png_sig_cmp(header, 0, 8)/g' libmb/mbpixbuf.c
+#%{__sed} -i -e 's/png_check_sig( header, 8 )/!png_sig_cmp(header, 0, 8)/g' libmb/mbpixbuf.c
 
 %build
 %{__libtoolize}
@@ -78,6 +74,7 @@ Statyczna biblioteka Matchbox.
 %configure \
 	--enable-jpeg \
 	--enable-pango \
+	--disable-silent-rules \
 	--enable-xsettings
 %{__make}
 
