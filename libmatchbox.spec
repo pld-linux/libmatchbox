@@ -61,7 +61,7 @@ Statyczna biblioteka Matchbox.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 #%{__sed} -i -e 's/png_check_sig( header, 8 )/!png_sig_cmp(header, 0, 8)/g' libmb/mbpixbuf.c
 
